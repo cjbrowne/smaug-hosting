@@ -1,0 +1,59 @@
+[
+  {
+    "name": "input",
+    "kind": "fanout",
+    "durable": true,
+    "autoDelete": false,
+    "internal": false,
+    "nowait": false,
+    "bindings": [],
+    "queues": []
+  },
+  {
+    "name": "game-events",
+    "kind": "topic",
+    "durable": true,
+    "autoDelete": false,
+    "internal": true,
+    "nowait": false,
+    "bindings": [
+      {
+        "destination": "game-events",
+        "key": "",
+        "source": "input",
+        "nowait": false,
+        "args": null
+      }
+    ],
+    "queues": [
+      {
+        "name": "ws",
+        "durable": false,
+        "autoDelete": false,
+        "exclusive": false,
+        "nowait": false,
+        "args": null,
+        "bindings": [{
+          "key": "game.ws.*",
+          "exchange": "game-events",
+          "nowait": false,
+          "args": null
+        }]
+      },
+      {
+        "name": "peril",
+        "durable": false,
+        "autoDelete": false,
+        "exclusive": false,
+        "nowait": false,
+        "args": null,
+        "bindings": [{
+          "key": "game.peril.*",
+          "exchange": "game-events",
+          "nowait": false,
+          "args": null
+        }]
+      }
+    ]
+  }
+]

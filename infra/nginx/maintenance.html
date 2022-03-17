@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Smaug Hosting Maintenance</title>
+    </head>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            background-color: #333;
+            color: #999;
+            font-family: 'Roboto', sans-serif;
+        }
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 100%;
+            grid-template-rows: 6rem auto;
+        }
+        header {
+            padding: 1rem;
+            background-color: rgb(145, 51, 51);
+            color: rgb(46, 36, 36);
+        }
+        h2 {
+            font-style: italic;
+            font-size: 12pt;
+            font-family: serif;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        a {
+            color: rgb(145, 51, 51);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .image {
+            position: relative;
+            display: block;
+            background-image: url('https://i.imgur.com/2G928Ye.gif');
+            background-size: cover;
+            width: 500px;
+            height: 272px;
+            border-radius: 15px;
+        }
+        .image::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            box-shadow: inset 0px 0px 150px black;
+            border-radius: 14px;
+        }
+
+    </style>
+    <body>
+        <div class="container">
+            <header>
+                <h1>
+                    Smaug Hosting Maintenance   
+                </h1>
+                <h2>The Smaug Hosting Control Panel is down for maintenance</h2>
+            </header>
+            <main>
+                <div class="image"></div>
+                <p>
+                    The control panel is offline temporarily while we make improvements. 
+                    Your Whelps are safe, and you should still be able to connect to them. 
+                    Please <a href="mailto:support@smaug-hosting.co.uk?subject=[maintenance]">contact support</a> if you cannot access your whelps during this time.
+                </p>
+            </main>
+        </div>
+    </body>
+</html>
